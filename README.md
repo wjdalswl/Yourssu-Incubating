@@ -1,7 +1,6 @@
 # Yourssu-Incubating
 유어슈 Incubating 과제 제출을 위한 repository 입니다. 
-![IMG_0583](https://github.com/wjdalswl/Yourssu-Incubating/assets/109158284/e345e7d9-7203-44d7-8d92-ce53e9bb9b16)
-
+<img width="1002" alt="스크린샷 2024-04-24 오후 3 38 33" src="https://github.com/wjdalswl/Yourssu-Incubating/assets/109158284/8e4920ec-172b-47d4-82cd-0d770ef46566">
 
 ## 💻 Tech Stack
 <div align="center">
