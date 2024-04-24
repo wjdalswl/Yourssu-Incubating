@@ -84,7 +84,6 @@ final class CalculatorViewController: UIViewController {
             $0.height.equalTo(39)
         }
     }
-    
     // MARK: - BindViewModel
     private func bindViewModel() {
         let operationObservable = Observable.merge(
