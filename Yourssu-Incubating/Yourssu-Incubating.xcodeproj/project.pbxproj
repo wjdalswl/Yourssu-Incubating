@@ -19,6 +19,8 @@
 		2DD6EC8A2BD8F1D100949D97 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2DD6EC892BD8F1D100949D97 /* SnapKit */; };
 		2DD6EC8E2BD8F3CC00949D97 /* Pods_Yourssu_Incubating.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D7B5FF6E7608F0CDAF80D5 /* Pods_Yourssu_Incubating.framework */; };
 		2DD6EC8F2BD8F3CC00949D97 /* Pods_Yourssu_Incubating.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 21D7B5FF6E7608F0CDAF80D5 /* Pods_Yourssu_Incubating.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2DD6EC922BD8FD4200949D97 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6EC912BD8FD4200949D97 /* CalculatorButton.swift */; };
+		2DD6EC942BD8FF0400949D97 /* CalculatorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6EC932BD8FF0400949D97 /* CalculatorTextField.swift */; };
 		87CC153850F375BBB36BF44E /* Pods_Yourssu_IncubatingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3469BD935CB3A1A8D112C35E /* Pods_Yourssu_IncubatingTests.framework */; };
 		9F56103DBB420C4B80BB70BD /* Pods_Yourssu_Incubating_Yourssu_IncubatingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28296EB5091524113DD14204 /* Pods_Yourssu_Incubating_Yourssu_IncubatingUITests.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +73,8 @@
 		2DD6EC732BD8E52600949D97 /* Yourssu_IncubatingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yourssu_IncubatingUITests.swift; sourceTree = "<group>"; };
 		2DD6EC752BD8E52600949D97 /* Yourssu_IncubatingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yourssu_IncubatingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2DD6EC852BD8E97F00949D97 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		2DD6EC912BD8FD4200949D97 /* CalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
+		2DD6EC932BD8FF0400949D97 /* CalculatorTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTextField.swift; sourceTree = "<group>"; };
 		3469BD935CB3A1A8D112C35E /* Pods_Yourssu_IncubatingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yourssu_IncubatingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B0CD435E8CDE607F01AC7A0 /* Pods-Yourssu-Incubating-Yourssu-IncubatingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yourssu-Incubating-Yourssu-IncubatingUITests.debug.xcconfig"; path = "Target Support Files/Pods-Yourssu-Incubating-Yourssu-IncubatingUITests/Pods-Yourssu-Incubating-Yourssu-IncubatingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E5F22BC6566701820DDBB94 /* Pods-Yourssu-Incubating-Yourssu-IncubatingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yourssu-Incubating-Yourssu-IncubatingUITests.release.xcconfig"; path = "Target Support Files/Pods-Yourssu-Incubating-Yourssu-IncubatingUITests/Pods-Yourssu-Incubating-Yourssu-IncubatingUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,9 +168,35 @@
 		2DD6EC872BD8E98400949D97 /* Assignment1 */ = {
 			isa = PBXGroup;
 			children = (
-				2DD6EC852BD8E97F00949D97 /* CalculatorViewController.swift */,
+				2DD6EC972BD8FFE200949D97 /* ViewModel */,
+				2DD6EC952BD8FFCF00949D97 /* Model */,
+				2DD6EC962BD8FFD900949D97 /* View */,
 			);
 			path = Assignment1;
+			sourceTree = "<group>";
+		};
+		2DD6EC952BD8FFCF00949D97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2DD6EC962BD8FFD900949D97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2DD6EC852BD8E97F00949D97 /* CalculatorViewController.swift */,
+				2DD6EC932BD8FF0400949D97 /* CalculatorTextField.swift */,
+				2DD6EC912BD8FD4200949D97 /* CalculatorButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2DD6EC972BD8FFE200949D97 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3B08223273AB55CBEAFAB267 /* Pods */ = {
@@ -440,7 +470,9 @@
 				2DD6EC572BD8E51A00949D97 /* ViewController.swift in Sources */,
 				2DD6EC532BD8E51A00949D97 /* AppDelegate.swift in Sources */,
 				2DD6EC862BD8E97F00949D97 /* CalculatorViewController.swift in Sources */,
+				2DD6EC942BD8FF0400949D97 /* CalculatorTextField.swift in Sources */,
 				2DD6EC552BD8E51A00949D97 /* SceneDelegate.swift in Sources */,
+				2DD6EC922BD8FD4200949D97 /* CalculatorButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
