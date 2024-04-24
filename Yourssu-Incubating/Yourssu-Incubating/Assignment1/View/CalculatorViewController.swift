@@ -8,9 +8,14 @@
 import UIKit
 import SnapKit
 import Then
+import RxSwift
+import RxCocoa
 
 final class CalculatorViewController: UIViewController {
     //MARK: - Properties
+    private var viewModel = CalculatorViewModel()
+    private let disposeBag = DisposeBag()
+    
     private lazy var firstNumTextField = CalculatorTextField(title: "첫번째 숫자를 입력해주세요")
     private lazy var secondNumTextField = CalculatorTextField(title: "두번째 숫자를 입력해주세요")
     private let explanationLabel = UILabel().then {
@@ -22,16 +27,17 @@ final class CalculatorViewController: UIViewController {
     private lazy var subButton = CalculatorButton(title: "빼기")
     private lazy var mulButton = CalculatorButton(title: "곱하기")
     private lazy var divButton = CalculatorButton(title: "나누기")
-
-    //MARK: -viewDidLoad
+    
+    //MARK: -ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
         setLayout()
+        bindViewModel()
     }
     
-    //MARK: - setLayout
+    //MARK: - SetLayout
     private func setLayout() {
         [firstNumTextField,
          secondNumTextField,
@@ -79,20 +85,38 @@ final class CalculatorViewController: UIViewController {
         }
     }
     
-    //MARK: - Action
-    private func textFieldDidChange() {
+    // MARK: - BindViewModel
+    private func bindViewModel() {
+        let operationObservable = Observable.merge(
+            addButton.rx.tap.map { Calculation.Operation.add },
+            subButton.rx.tap.map { Calculation.Operation.sub },
+            mulButton.rx.tap.map { Calculation.Operation.mul },
+            divButton.rx.tap.map { Calculation.Operation.div }
+        ).asObservable()
+        let calculateTrigger = Observable.merge(
+            addButton.rx.tap.asObservable(),
+            subButton.rx.tap.asObservable(),
+            mulButton.rx.tap.asObservable(),
+            divButton.rx.tap.asObservable()
+        ).map { _ in Void() }
         
-    }
-    @objc private func addButtonDidTap() {
+        let input = CalculatorViewModel.Input(
+            firstNumber: firstNumTextField.rx.text.orEmpty.asObservable(),
+            secondNumber: secondNumTextField.rx.text.orEmpty.asObservable(),
+            operation: operationObservable,
+            calculateTrigger: calculateTrigger
+        )
         
-    }
-    @objc private func subButtonDidTap() {
+        let output = viewModel.transform(input: input)
+        output.result
+            .bind(to: explanationLabel.rx.text)
+            .disposed(by: disposeBag)
         
-    }
-    @objc private func mulButtonDidTap() {
-        
-    }
-    @objc private func divButtonDidTap() {
-        
+        output.bool
+            .map { isBlack in
+                return isBlack ? .black : .gray
+            }
+            .bind(to: explanationLabel.rx.textColor)
+            .disposed(by: disposeBag)
     }
 }

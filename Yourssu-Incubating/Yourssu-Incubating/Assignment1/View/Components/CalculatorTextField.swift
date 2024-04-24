@@ -9,10 +9,10 @@ import UIKit
 import Then
 
 class CalculatorTextField: UITextField{
+    // MARK: - Init
     init(title: String) {
             super.init(frame: .zero)
         self.do {
-            $0.delegate = self
             $0.placeholder = title
             $0.backgroundColor = .systemGray6
             $0.textColor = .black
@@ -34,9 +34,4 @@ class CalculatorTextField: UITextField{
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-//MARK: - UITextFieldDelegate
-extension CalculatorTextField: UITextFieldDelegate {
-    
 }

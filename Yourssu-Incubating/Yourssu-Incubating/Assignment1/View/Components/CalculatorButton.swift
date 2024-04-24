@@ -9,6 +9,7 @@ import UIKit
 import Then
 
 class CalculatorButton: UIButton {
+    // MARK: - Init
     init(title: String) {
             super.init(frame: .zero)
         self.do {

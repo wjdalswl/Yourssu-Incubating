@@ -21,6 +21,10 @@
 		2DD6EC8F2BD8F3CC00949D97 /* Pods_Yourssu_Incubating.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 21D7B5FF6E7608F0CDAF80D5 /* Pods_Yourssu_Incubating.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2DD6EC922BD8FD4200949D97 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6EC912BD8FD4200949D97 /* CalculatorButton.swift */; };
 		2DD6EC942BD8FF0400949D97 /* CalculatorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6EC932BD8FF0400949D97 /* CalculatorTextField.swift */; };
+		2DD6EC992BD901E000949D97 /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6EC982BD901E000949D97 /* CalculatorModel.swift */; };
+		2DD6EC9B2BD901EC00949D97 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6EC9A2BD901EC00949D97 /* CalculatorViewModel.swift */; };
+		2DD6EC9E2BD9049300949D97 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2DD6EC9D2BD9049300949D97 /* RxCocoa */; };
+		2DD6ECA02BD9049300949D97 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2DD6EC9F2BD9049300949D97 /* RxSwift */; };
 		87CC153850F375BBB36BF44E /* Pods_Yourssu_IncubatingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3469BD935CB3A1A8D112C35E /* Pods_Yourssu_IncubatingTests.framework */; };
 		9F56103DBB420C4B80BB70BD /* Pods_Yourssu_Incubating_Yourssu_IncubatingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28296EB5091524113DD14204 /* Pods_Yourssu_Incubating_Yourssu_IncubatingUITests.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +79,8 @@
 		2DD6EC852BD8E97F00949D97 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		2DD6EC912BD8FD4200949D97 /* CalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
 		2DD6EC932BD8FF0400949D97 /* CalculatorTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTextField.swift; sourceTree = "<group>"; };
+		2DD6EC982BD901E000949D97 /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
+		2DD6EC9A2BD901EC00949D97 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 		3469BD935CB3A1A8D112C35E /* Pods_Yourssu_IncubatingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yourssu_IncubatingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B0CD435E8CDE607F01AC7A0 /* Pods-Yourssu-Incubating-Yourssu-IncubatingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yourssu-Incubating-Yourssu-IncubatingUITests.debug.xcconfig"; path = "Target Support Files/Pods-Yourssu-Incubating-Yourssu-IncubatingUITests/Pods-Yourssu-Incubating-Yourssu-IncubatingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E5F22BC6566701820DDBB94 /* Pods-Yourssu-Incubating-Yourssu-IncubatingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yourssu-Incubating-Yourssu-IncubatingUITests.release.xcconfig"; path = "Target Support Files/Pods-Yourssu-Incubating-Yourssu-IncubatingUITests/Pods-Yourssu-Incubating-Yourssu-IncubatingUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -88,7 +94,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DD6EC9E2BD9049300949D97 /* RxCocoa in Frameworks */,
 				2DD6EC8A2BD8F1D100949D97 /* SnapKit in Frameworks */,
+				2DD6ECA02BD9049300949D97 /* RxSwift in Frameworks */,
 				2DD6EC8E2BD8F3CC00949D97 /* Pods_Yourssu_Incubating.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,6 +186,7 @@
 		2DD6EC952BD8FFCF00949D97 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2DD6EC982BD901E000949D97 /* CalculatorModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,8 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				2DD6EC852BD8E97F00949D97 /* CalculatorViewController.swift */,
-				2DD6EC932BD8FF0400949D97 /* CalculatorTextField.swift */,
-				2DD6EC912BD8FD4200949D97 /* CalculatorButton.swift */,
+				2DD6ECA12BD9051A00949D97 /* Components */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,8 +203,18 @@
 		2DD6EC972BD8FFE200949D97 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2DD6EC9A2BD901EC00949D97 /* CalculatorViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2DD6ECA12BD9051A00949D97 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2DD6EC932BD8FF0400949D97 /* CalculatorTextField.swift */,
+				2DD6EC912BD8FD4200949D97 /* CalculatorButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		3B08223273AB55CBEAFAB267 /* Pods */ = {
@@ -243,6 +261,8 @@
 			name = "Yourssu-Incubating";
 			packageProductDependencies = (
 				2DD6EC892BD8F1D100949D97 /* SnapKit */,
+				2DD6EC9D2BD9049300949D97 /* RxCocoa */,
+				2DD6EC9F2BD9049300949D97 /* RxSwift */,
 			);
 			productName = "Yourssu-Incubating";
 			productReference = 2DD6EC4F2BD8E51A00949D97 /* Yourssu-Incubating.app */;
@@ -321,6 +341,7 @@
 			mainGroup = 2DD6EC462BD8E51A00949D97;
 			packageReferences = (
 				2DD6EC882BD8F1D100949D97 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				2DD6EC9C2BD9049300949D97 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 2DD6EC502BD8E51A00949D97 /* Products */;
 			projectDirPath = "";
@@ -469,10 +490,12 @@
 			files = (
 				2DD6EC572BD8E51A00949D97 /* ViewController.swift in Sources */,
 				2DD6EC532BD8E51A00949D97 /* AppDelegate.swift in Sources */,
+				2DD6EC9B2BD901EC00949D97 /* CalculatorViewModel.swift in Sources */,
 				2DD6EC862BD8E97F00949D97 /* CalculatorViewController.swift in Sources */,
 				2DD6EC942BD8FF0400949D97 /* CalculatorTextField.swift in Sources */,
 				2DD6EC552BD8E51A00949D97 /* SceneDelegate.swift in Sources */,
 				2DD6EC922BD8FD4200949D97 /* CalculatorButton.swift in Sources */,
+				2DD6EC992BD901E000949D97 /* CalculatorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -827,6 +850,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		2DD6EC9C2BD9049300949D97 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.7.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -834,6 +865,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2DD6EC882BD8F1D100949D97 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		2DD6EC9D2BD9049300949D97 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2DD6EC9C2BD9049300949D97 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		2DD6EC9F2BD9049300949D97 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2DD6EC9C2BD9049300949D97 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
