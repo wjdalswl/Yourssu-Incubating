@@ -26,7 +26,9 @@ struct Calculation {
             if secondNumber == 0 {
                 return "0으로 나눌 수 없습니다."
             } else {
-                return "\(firstNumber) / \(secondNumber) = \(firstNumber / secondNumber)"
+                let quotient = firstNumber / secondNumber
+                let remainder = firstNumber % secondNumber
+                return "\(firstNumber) / \(secondNumber) = \(quotient).\(remainder)"
             }
         }
     }

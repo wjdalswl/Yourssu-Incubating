@@ -8,13 +8,17 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var anyDic = ["name": "minji"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+
         // Do any additional setup after loading the view.
     }
 
-
+    func hi(_ name: String) {
+        print(name)
+    }
 }
 

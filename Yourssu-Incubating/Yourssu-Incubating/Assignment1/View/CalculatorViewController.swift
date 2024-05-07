@@ -13,7 +13,7 @@ import RxCocoa
 
 final class CalculatorViewController: UIViewController {
     //MARK: - Properties
-    private var viewModel = CalculatorViewModel()
+    private var viewModel: CalculatorViewModel
     private let disposeBag = DisposeBag()
     
     private lazy var firstNumTextField = CalculatorTextField(title: "첫번째 숫자를 입력해주세요")
@@ -27,6 +27,15 @@ final class CalculatorViewController: UIViewController {
     private lazy var subButton = CalculatorButton(title: "빼기")
     private lazy var mulButton = CalculatorButton(title: "곱하기")
     private lazy var divButton = CalculatorButton(title: "나누기")
+    
+    init(viewModel: CalculatorViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+        
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     //MARK: -ViewDidLoad
     override func viewDidLoad() {
