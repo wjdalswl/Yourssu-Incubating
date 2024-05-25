@@ -63,7 +63,7 @@ final class AddMemoViewController: UIViewController {
         }
         contentTextView.snp.makeConstraints {
             $0.top.equalTo(titleTextField.snp.bottom).offset(20)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(20)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
             $0.leading.trailing.equalToSuperview().inset(20)
         }
     }

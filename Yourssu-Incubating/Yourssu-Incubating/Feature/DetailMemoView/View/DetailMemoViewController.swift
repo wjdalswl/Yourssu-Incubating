@@ -52,7 +52,7 @@ final class DetailMemoViewController: UIViewController {
         }
         
         titleLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(34)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(34)
             $0.leading.trailing.equalToSuperview().inset(36)
         }
         contentLabel.snp.makeConstraints {

@@ -34,13 +34,15 @@ final class MemoTableViewCell: UITableViewCell {
     
     //MARK: - SetLayout
     private func setLayout() {
+        selectionStyle = .none
+        
         [titleLabel, contentLabel].forEach {
             self.addSubview($0)
         }
         
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(14)
-            $0.leading.equalToSuperview().offset(16)
+            $0.leading.equalToSuperview().inset(16)
             $0.trailing.equalToSuperview()
         }
         contentLabel.snp.makeConstraints {
