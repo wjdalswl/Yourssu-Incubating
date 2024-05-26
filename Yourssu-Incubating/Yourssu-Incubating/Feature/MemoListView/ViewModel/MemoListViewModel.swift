@@ -15,15 +15,18 @@ final class MemoListViewModel {
     var memosPublisher: AnyPublisher<[MemoModel], Never> {
         $memos.eraseToAnyPublisher()
     }
-
+    
+    //MARK: - addMemo
     func addMemo(_ memo: MemoModel) {
         memos.append(memo)
     }
-
+    
+    //MARK: -deleteMemo
     func deleteMemo(at index: Int) {
         memos.remove(at: index)
     }
-
+    
+    //MARK: -updateMemo
     func updateMemo(_ memo: MemoModel, at index: Int) {
         memos[index] = memo
     }

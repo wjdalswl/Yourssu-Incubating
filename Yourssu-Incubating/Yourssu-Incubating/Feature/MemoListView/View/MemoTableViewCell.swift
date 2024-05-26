@@ -34,8 +34,6 @@ final class MemoTableViewCell: UITableViewCell {
     
     //MARK: - SetLayout
     private func setLayout() {
-        selectionStyle = .none
-        
         [titleLabel, contentLabel].forEach {
             self.addSubview($0)
         }
@@ -49,7 +47,6 @@ final class MemoTableViewCell: UITableViewCell {
             $0.top.equalTo(titleLabel.snp.bottom).offset(2)
             $0.leading.equalToSuperview().inset(16)
             $0.trailing.equalToSuperview()
-            $0.bottom.equalToSuperview().inset(15)
         }
     }
     

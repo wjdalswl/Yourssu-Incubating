@@ -53,7 +53,7 @@ final class DetailMemoViewController: UIViewController {
         
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(34)
-            $0.leading.trailing.equalToSuperview().inset(36)
+            $0.directionalHorizontalEdges.equalToSuperview().inset(36)
         }
         contentLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(10)
@@ -88,7 +88,7 @@ final class DetailMemoViewController: UIViewController {
         
         let updatedMemo = viewModel.updateMemo(title: updatedTitle, content: updatedContent)
         delegate?.didUpdateMemo(updatedMemo, atIndex: index!)
-        self.navigationController?.popViewController(animated: true)
+        coordinator?.performTransition(to: .pop)
     }
 }
 

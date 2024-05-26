@@ -58,13 +58,13 @@ final class AddMemoViewController: UIViewController {
         
         titleTextField.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.directionalHorizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(35)
         }
         contentTextView.snp.makeConstraints {
             $0.top.equalTo(titleTextField.snp.bottom).offset(20)
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.directionalHorizontalEdges.equalToSuperview().inset(20)
         }
     }
 
@@ -107,7 +107,7 @@ final class AddMemoViewController: UIViewController {
             viewController.addMemo(newMemo)
         }
         
-        self.navigationController?.popViewController(animated: true)
+        coordinator?.performTransition(to: .pop)
     }
 }
 

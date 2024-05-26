@@ -19,6 +19,8 @@ final class MemoListViewController: UIViewController {
         $0.dataSource = self
         $0.delegate = self
         $0.register(MemoTableViewCell.self, forCellReuseIdentifier: MemoTableViewCell.identifier)
+        $0.rowHeight = UITableView.automaticDimension
+        $0.estimatedRowHeight = 75
     }
     
     private let emptyLabel = UILabel().then {
@@ -44,7 +46,7 @@ final class MemoListViewController: UIViewController {
         
         tableView.snp.makeConstraints {
             $0.top.bottom.equalTo(view.safeAreaLayoutGuide)
-            $0.leading.trailing.equalToSuperview().inset(18)
+            $0.directionalHorizontalEdges.equalToSuperview().inset(18)
         }
     }
 
@@ -65,7 +67,7 @@ final class MemoListViewController: UIViewController {
     
     // MARK: - Action
     @objc private func addButtonTapped() {
-        coordinator?.showAddMemo()
+        coordinator?.performTransition(to: .add)
     }
     
     func addMemo(_ memo: MemoModel) {
@@ -86,7 +88,8 @@ final class MemoListViewController: UIViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let memo = memos[indexPath.row]
-        coordinator?.showDetailMemo(memo: memo, index: indexPath.row, delegate: self)
+        tableView.deselectRow(at: indexPath, animated: true)
+        coordinator?.performTransition(to: .detail(memo: memo, index: indexPath.row, delegate: self))
     }
 }
 
